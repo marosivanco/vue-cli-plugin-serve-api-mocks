@@ -1,0 +1,13 @@
+{
+	"name": "vue-cli-plugin-serve-api-mocks",
+	"version": "0.0.1",
+	"description": "Plugin for vue-cli to serve API mocks.",
+	"main": "index.js",
+	"keywords": [
+		"api",
+		"vue",
+		"mocks"
+	],
+	"author": "Maroš Ivančo",
+	"license": "MIT"
+}
