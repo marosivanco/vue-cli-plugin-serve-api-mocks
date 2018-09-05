@@ -5,7 +5,7 @@ const Path = require("path");
 function rewrite(apiPath, extensions, req, next) {
 	const url = req.url.split("?");
 	const b = `${url[0]}/${req.method}`;
-	extensions.some(ext => {
+	const mapped = extensions.some(ext => {
 		const resourcePath = `${b}.${ext}`;
 		const filePath = Path.posix.join(apiPath, resourcePath);
 		if (FS.existsSync(filePath)) {
@@ -14,7 +14,7 @@ function rewrite(apiPath, extensions, req, next) {
 		}
 		return false;
 	});
-	console.log(req.method, req.originalUrl, "→", req.url);
+	console.log(req.method, req.originalUrl, "→", mapped ? req.url : "not found");
 	req.method = "GET";
 	next();
 }
