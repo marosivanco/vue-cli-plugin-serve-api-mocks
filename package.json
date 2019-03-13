@@ -9,5 +9,9 @@
 		"mocks"
 	],
 	"author": "Maroš Ivančo",
-	"license": "MIT"
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marosivanco/vue-cli-plugin-serve-api-mocks.git"
+	}
 }
