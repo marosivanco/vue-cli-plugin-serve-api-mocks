@@ -6,7 +6,7 @@ function rewrite(apiPath, extensions, req, next) {
 	const url = req.url.split("?");
 	const b = `${url[0]}/${req.method}`;
 	const mapped = extensions.some(ext => {
-		const resourcePath = `${b}.${ext}`;
+		const resourcePath = url[1] ? `${b}_${url[1]}.${ext}` : `${b}.${ext}`;
 		const filePath = Path.posix.join(apiPath, resourcePath);
 		if (FS.existsSync(filePath)) {
 			req.url = resourcePath;
